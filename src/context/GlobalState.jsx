@@ -1,4 +1,5 @@
-import { createContext, useContext } from 'react'
+import { createContext, useContext, useReducer, useState } from 'react'
+import AppReduce from "./APpReducer";
 
 export const Context = createContext()
 
@@ -8,8 +9,12 @@ export const useGlobalState = () => {
 }
 
 export const GlobalProvider = ({ children }) => {
+    const [state, setState] = useReducer(AppReduce,[])
+
+    
+    
     return (
-        <Context.Provider value={{ total: 100 }}>
+        <Context.Provider value={{ state, setState, }}>
             {children}
         </Context.Provider>
     )

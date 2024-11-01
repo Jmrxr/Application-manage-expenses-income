@@ -1,8 +1,12 @@
-import React from 'react'
+import Header from "./components/Header";
+import { GlobalProvider } from "./context/GlobalState";
 
 function App() {
   return (
-    <div>App react</div>
+    <GlobalProvider>
+      <Header />
+      <h1>App react</h1>
+    </GlobalProvider>    
   )
 }
 

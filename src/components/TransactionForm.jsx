@@ -6,14 +6,14 @@ function TransactionForm() {
   const { addTransaction } = useGlobalState();
   const [description, setDescription] = useState();
   const [amount, setAmount] = useState(0);
+  
   const onSubmit = (e) => {
-    e.preventDefaulf();
+    e.preventDefault();
     addTransaction({
       id: 1,
       description,
       amount
     })
-    console.log(description, amount);
   };
 
   return (

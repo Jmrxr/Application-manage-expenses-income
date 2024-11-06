@@ -1,6 +1,9 @@
+// Import hook handel status local
 import { useState } from "react"
 import { useGlobalState } from "../context/GlobalState";
 
+
+// Fuction transactionfrom
 function TransactionForm() {
 
   const { addTransaction } = useGlobalState();
@@ -31,4 +34,5 @@ function TransactionForm() {
   )
 }
 
+// Export component
 export default TransactionForm

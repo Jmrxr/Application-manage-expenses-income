@@ -1,3 +1,4 @@
+// Export fuction  value default 
 export default (state, action) => {
     switch (action.type) {
         case "ADD_TRANSACTION":

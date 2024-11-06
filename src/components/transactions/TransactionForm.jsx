@@ -1,6 +1,6 @@
 // Import hook handel status local
 import { useState } from "react"
-import { useGlobalState } from "../context/GlobalState";
+import { useGlobalState } from "../../context/GlobalState";
 
 
 // Fuction transactionfrom

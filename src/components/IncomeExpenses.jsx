@@ -8,6 +8,9 @@ function IncomeExpenses() {
 
     const income = amounts.filter(item => item > 0).reduce((acc, item) => (acc += item), 0)
     
+    const expense = amounts.filter(item => item < 0).reduce((acc, item) => acc += item ,0) * -1;
+
+
   return (
     <>
     <div>
@@ -16,7 +19,7 @@ function IncomeExpenses() {
     </div>
     <div>
         <h4>Expense</h4>
-        <p> {-100} </p>
+        <p> {expense} </p>
     </div>
     </>
   )

@@ -17,7 +17,6 @@ function App() {
       <Balance />
       <TransactionForm />
       <TransactionList />
-      <h1>App react</h1>
     </GlobalProvider>    
   )
 }

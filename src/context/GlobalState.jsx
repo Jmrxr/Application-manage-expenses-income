@@ -1,5 +1,5 @@
 // Import necessary fuction the react
-import { createContext, useContext, useReducer, useState } from 'react'
+import { createContext, useContext, useReducer, useEffect } from 'react'
 import AppReduce from "./AppReducer";
 
 // We define the initial state of the context
@@ -18,7 +18,16 @@ export const useGlobalState = () => {
 
 // Provider component that encapsulates the global state logic
 export const GlobalProvider = ({ children }) => {
-    const [state, dispatch] = useReducer(AppReduce, initialState)
+    const [state, dispatch] = useReducer(AppReduce, initialState,
+        () =>{
+            const localData = localStorage.getItem('transactions')
+            
+            return localData ? JSON.parse(localData) : initialState
+        });
+
+        useEffect(() => {
+            localStorage.setItem('transactions', JSON.stringify(state))
+        }, [state])
 
 // Fuction add new transaction
     const addTransaction = (transaction) => {

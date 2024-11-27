@@ -2,7 +2,6 @@
 import { createContext, useContext, useReducer, useEffect } from 'react'
 import AppReduce from "./AppReducer";
 
-// We define the initial state of the context
 const initialState = {
     transactions: []
 }
@@ -10,7 +9,7 @@ const initialState = {
 // Create context for our app
 export const Context = createContext()
 
-// Custom hook to access the global context
+
 export const useGlobalState = () => {
     const context = useContext(Context)
     return context
